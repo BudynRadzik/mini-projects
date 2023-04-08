@@ -9,41 +9,43 @@
 int main()
 {
 
-	std::array <int, 9> numbers{ 2, 6, 5, 4, 3, 7, 1, 9, 8 };
+	std::array <int, 9> numbers{9,8,7,6,5,4,3,2,1};
 	int n = numbers.size();
 	std::cout << n << std::endl;
 
-	int counter = 0;
+	int swap_counter = 1;
 	int temp = 0;
 
-
-	
-	
-
-	for (int j = 0; j < numbers.size() - 1; j++)
+	for (int j = 0; j < numbers.size(); j++)
 	{
+		std::cout << numbers[j] << " ";
+	}
+	std::cout << std::endl;
 
-		std::cout << std::endl;
-		for (int i = 0; i < numbers.size() - 1; i++)
+	for (int j = 0; j < numbers.size()-1 && swap_counter!=0 ; j++)
+	{
+		swap_counter = 0;
+		for (int i = 0; i < numbers.size() - 1-j; i++)
 		{
-			
 			if (numbers[i] > numbers[i + 1])
 			{
-
 				temp = numbers[i];
 				numbers[i] = numbers[i + 1];
 				numbers[i + 1] = temp;
-
-				//for (int j = 0; j < numbers.size() - 1; j++)
-					//std::cout << numbers[i] << " ";
-
+				swap_counter++;
 			}
-			
-			std::cout << numbers[i] << " ";
-			
-
-
 		}
+		
+		for (int k = 0; k < numbers.size(); k++)
+		{
+			std::cout << numbers[k] << " ";
+		}
+		std::cout << std::endl;
+			
+			
+
+
+		
 
 	}
 
