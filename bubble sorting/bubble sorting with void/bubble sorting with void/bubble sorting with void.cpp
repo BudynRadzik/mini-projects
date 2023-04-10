@@ -3,6 +3,22 @@
 #include <iostream>
 #include <iomanip>
 
+void print_array(int* tab, int tab_size)
+{
+	for (int i = 0; i < tab_size; i++)
+	{
+		std::cout << tab[i] << ", ";
+	}
+}
+
+void fill_array_random(int* tab, int tab_size, int min, int max)
+{
+	for (int i = 0; i < tab_size; i++)
+	{
+		tab[i] = std::rand() % (max - min + 1) + min;
+	}
+}
+
 int bubble_sort(int numbers[],  const int numbers_size)
 {
 	int temp = 0, compare_counter = 0;
@@ -45,23 +61,19 @@ int optimized_bubble_sort(int numbers[], const int numbers_size)
 
 int main()
 {
+	srand(time(NULL));
 	int counter;
-	const int numbers_size = 15;
-	int numbers[numbers_size] = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
+	const int numbers_size = 1024;
+	int numbers[numbers_size] = {0};
+	fill_array_random(numbers, numbers_size, 0, numbers_size);
 	std::cout << "Before bubble sort: ";
-	for (int i = 0; i < numbers_size; i++)
-	{
-		std::cout << numbers[i] << " ";
-	}
+	//print_array(numbers, numbers_size);
+	
 	std::cout << std::endl;
 	counter = bubble_sort(numbers, numbers_size);
 	//counter = optimized_bubble_sort(numbers, numbers_size);
 	std::cout << "After bubble sort: " << "compare counter: " << counter << std::endl;
-	for (int i = 0; i < numbers_size; i++)
-	{
-		std::cout << numbers[i] << " ";
-	}
-	
+	//print_array(numbers, numbers_size);
 
 
 	return 0;
