@@ -17,12 +17,12 @@ int main()
 
     for (int i=0; i<number; i ++ )
     {
-        cout <<(int) array << endl;
+        cout <<(int) array << endl;// rzutowanie zmiennyej na typ (int)
         array++;
     }
 
 
-    delete [] array;
+    
 
     return 0;
 }
