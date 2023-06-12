@@ -32,5 +32,16 @@ int main()
 
 void InsertSort(int temp_arr[], int arr_size) 
 {
+    for (int i = 1; i < arr_size; i++)
+    {
+        int temp = temp_arr[i];
+        int j = i - 1;
+        while (j >= 0 && temp_arr[j] > temp) {
+            temp_arr[j + 1] = temp_arr[j];
+            j--;
+        }
+        temp_arr[j + 1] = temp;
+
+    }
     
 }
