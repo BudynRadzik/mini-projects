@@ -30,15 +30,20 @@ int main()
 }
 void SelectionSort(int temp_arr[], int  arr_size)
 {
-    int temp = 0;
-    int min = 0;
-    for (int i = 0; i < arr_size; i++)
+   
+    for (int i = 0; i < arr_size-1; i++)
     {
-        for (int j = 0; j < arr_size; j++)
+        int min = i;
+        for (int j = i+1; j < arr_size; j++)
         {
-
+            if (temp_arr[min] > temp_arr[j])
+            {
+                min = j;
+            }
         }
-        min = temp_arr[i];
+        int temp = temp_arr[i];
+        temp_arr[i] = temp_arr[min];
+        temp_arr[min] = temp;
 
     }
 
