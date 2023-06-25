@@ -31,7 +31,7 @@ int main()
 void SelectionSort(int temp_arr[], int  arr_size)
 {
    
-    for (int i = 0; i < arr_size-1; i++)
+    for (int i = 0; i < arr_size; i++)
     {
         int min = i;
         for (int j = i+1; j < arr_size; j++)
